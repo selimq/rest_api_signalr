@@ -1,0 +1,16 @@
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Repo.deps.json
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Repo.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Repo.pdb
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Data.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Services.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Data.pdb
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Login.Services.pdb
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\bin\Release\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.AssemblyInfo.cs
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.csproj.CopyComplete
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Repo\obj\Release\netcoreapp2.1\Login.Repo.pdb

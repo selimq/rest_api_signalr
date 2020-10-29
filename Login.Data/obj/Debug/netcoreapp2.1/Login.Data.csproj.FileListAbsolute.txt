@@ -1,0 +1,9 @@
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\bin\Debug\netcoreapp2.1\Login.Data.deps.json
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\bin\Debug\netcoreapp2.1\Login.Data.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\bin\Debug\netcoreapp2.1\Login.Data.pdb
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Debug\netcoreapp2.1\Login.Data.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Debug\netcoreapp2.1\Login.Data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Debug\netcoreapp2.1\Login.Data.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Debug\netcoreapp2.1\Login.Data.AssemblyInfo.cs
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Debug\netcoreapp2.1\Login.Data.dll
+C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Debug\netcoreapp2.1\Login.Data.pdb
