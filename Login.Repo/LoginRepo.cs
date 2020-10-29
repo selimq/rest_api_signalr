@@ -1,15 +1,19 @@
 ﻿using Login.Data;
 using Login.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Login.Repo
 {
-    public class LoginRepo : ILogin,INobet
+    public class LoginRepo : ILogin
     {
         private readonly LoginDbContext _db;
         public LoginRepo(LoginDbContext db)
@@ -17,14 +21,15 @@ namespace Login.Repo
             _db = db;
         }
 
-        IQueryable<Nobet> INobet.GetNobets => _db.Nobetler;
-        IQueryable<Giris> ILogin.GetLogins => _db.Girisler;
-        
+        IQueryable<Person> ILogin.GetLogins => _db.Girisler;
+
+
+       
         //Login
         public async Task<POJO> Delete(int? id)
         {
             POJO model = new POJO();
-            Giris login = await GetLogin(id);
+            Person login = await GetLogin(id);
             if (login != null)
             {
                 try
@@ -49,9 +54,9 @@ namespace Login.Repo
             return model;
         }
 
-        public async Task<Giris> GetLogin(int? id)
+        public async Task<Person> GetLogin(int? id)
         {
-            Giris login = new Giris();
+            Person login = new Person();
             if(id != null)
             {
                 login = await _db.Girisler.FindAsync(id);
@@ -59,9 +64,9 @@ namespace Login.Repo
             return login;
         }
 
-        public async Task<Giris> GetLoginWithMail(String mail)
+     /*   public async Task<Person> GetLoginWithMail(String mail)
         {
-            Giris login = new Giris();
+            Person login = new Person();
             if (mail != null)
             {
                 login = await _db.Girisler.Where(x => x.Mail ==mail).FirstOrDefaultAsync();
@@ -70,17 +75,17 @@ namespace Login.Repo
             return login;
         }
 
-        public async Task<List<Giris>> GetLoginsWithMail(String mail)
+        public async Task<List<Person>> GetLoginsWithMail(String mail)
         {
-            List<Giris> logins = new List<Giris>();
+            List<Person> logins = new List<Person>();
             if (mail != null)
             {
                 logins = await _db.Girisler.Where(i => i.Mail == mail).ToListAsync();
             }
             return logins;
-        }
+        }*/
 
-        public async Task<POJO> Save(Giris login)
+public async Task<POJO> Save(Person login)
         {
             POJO model = new POJO();
             //Add
@@ -104,13 +109,13 @@ namespace Login.Repo
             //update
             else if (login.Id != 0)
             {
-                Giris _Entity = await GetLogin(login.Id);
+                Person _Entity = await GetLogin(login.Id);
                 _Entity.Id = login.Id;
                 _Entity.Ad = login.Ad;
                 _Entity.Soyad = login.Soyad;
                 _Entity.Mail = login.Mail;
                 _Entity.Sifre = login.Sifre;
-                _Entity.Unvan = login.Unvan;
+              
                 try
                 {
                     await _db.SaveChangesAsync();
@@ -128,100 +133,31 @@ namespace Login.Repo
         }
 
 
-        //Nobet
-        public async Task<Nobet> GetNobet(int? id)
+        public async Task<Person> Authenticate(String ad,String sifre)
         {
-            Nobet nobet = new Nobet();
-            if (id != null)
+            Person user = await _db.Girisler.SingleOrDefaultAsync(x => x.Ad == ad && x.Sifre == sifre);
+            if (user == null)
+                return null;
+
+            // Authentication(Yetkilendirme) başarılı ise JWT token üretilir.
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes("12345678909876543211234567890");
+            var tokenDescriptor = new SecurityTokenDescriptor
             {
-                nobet = await _db.Nobetler.FindAsync(id);
-            }
-            return nobet;
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(2),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            user.Token = tokenHandler.WriteToken(token);
+
+            // Sifre null olarak gonderilir.
+            user.Sifre = null;
+            return user;
         }
 
-        public async Task<POJO> Save(Nobet nobet)
-        {
-            POJO model = new POJO();
-            if (nobet.Id == 0)
-            {
-                try
-                {
-                    await _db.AddAsync(nobet);
-                    await _db.SaveChangesAsync();
-
-                    model.Id = nobet.Id;
-                    model.Flag = true;
-                    model.Message = "Ekleme tamamlandı.";
-                }
-                catch (Exception ex)
-                {
-                    model.Flag = false;
-                    model.Message = ex.ToString();
-                }
-            }
-            else if (nobet.Id != 0)
-            {
-                Nobet _Entity = await GetNobet(nobet.Id);
-                _Entity.Id = nobet.Id;
-                _Entity.Nobet_Yer = nobet.Nobet_Yer;
-                _Entity.Ogretmen_Id = nobet.Ogretmen_Id;
-                _Entity.Nobet_Zaman = nobet.Nobet_Zaman;
-              
-                try
-                {
-                    await _db.SaveChangesAsync();
-                    model.Id = nobet.Id;
-                    model.Flag = true;
-                    model.Message = "Güncelleme işlemi tamamlandı";
-                }
-                catch (Exception ex)
-                {
-                    model.Flag = false;
-                    model.Message = ex.ToString();
-                }
-            }
-            return model;
-
-        }
-
-        public async Task<List<Nobet>> GetNobetsWithId(int? id)
-        {
-            List<Nobet> nobetler = new List<Nobet>();
-            if(id != null)
-            {
-                nobetler = await _db.Nobetler.Where(i => i.Ogretmen_Id == id).ToListAsync();
-            }
-            return nobetler;
-        }
-        
-        public async Task<POJO> Nobet_Delete (int? id)
-        {
-
-            POJO model = new POJO();
-            Nobet nobet = await GetNobet(id);
-            if (nobet != null)
-            {
-                try
-                {
-                    _db.Nobetler.Remove(nobet);
-                    await _db.SaveChangesAsync();
-                    //mesaj
-                    model.Flag = true;
-                    model.Message = "Silme işlemi tamamlandı";
-                }
-                catch (Exception ex)
-                {
-                    model.Flag = false;
-                    model.Message = ex.ToString();
-                }
-            }
-            else
-            {
-                model.Flag = false;
-                model.Message = "Geçerli personel bulunamadı.";
-            }
-            return model;
-
-        }
     }
 }

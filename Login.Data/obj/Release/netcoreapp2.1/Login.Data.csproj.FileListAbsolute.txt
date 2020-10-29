@@ -7,3 +7,11 @@ C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Release\netcoreapp2.1\Logi
 C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.AssemblyInfo.cs
 C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.dll
 C:\Users\Asus\source\repos\LoginWebApi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.pdb
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\bin\Release\netcoreapp2.1\Login.Data.deps.json
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\bin\Release\netcoreapp2.1\Login.Data.dll
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\bin\Release\netcoreapp2.1\Login.Data.pdb
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.AssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.dll
+C:\Users\Asus\Documents\GitHub\loginapi\Login.Data\obj\Release\netcoreapp2.1\Login.Data.pdb

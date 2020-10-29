@@ -19,21 +19,21 @@ namespace LoginWebApi.Controllers
     public class LoginController : ControllerBase
     {
         private readonly ILogin _Giris;
-        protected HttpClient ClientFireBase;
+       // protected HttpClient ClientFireBase;
         public LoginController(ILogin giris)
         {
             _Giris = giris;
-            ClientFireBase = StartFireBase();
+            //ClientFireBase = StartFireBase();
         }
 
-        private HttpClient StartFireBase()
+       /* private HttpClient StartFireBase()
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://fcm.googleapis.com");
             return client;
-        }
+        }*/
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] Giris login)
+        public async Task<IActionResult> Save([FromBody] Person login)
         {
             if (login == null)
             {
@@ -52,7 +52,7 @@ namespace LoginWebApi.Controllers
 
           
         }
-        [Route("withmail/{mail}")]
+      /*  [Route("withmail/{mail}")]
         [HttpGet("{mail}")]
         public async Task<ActionResult> GetLoginWithMail(String mail)
         {
@@ -60,7 +60,7 @@ namespace LoginWebApi.Controllers
             {
                 return BadRequest();
             }
-            Giris model = await _Giris.GetLoginWithMail(mail);
+            Person model = await _Giris.GetLoginWithMail(mail);
             if (model == null)
             {
                 return NotFound();
@@ -75,13 +75,13 @@ namespace LoginWebApi.Controllers
             {
                 return BadRequest();
             }
-            List<Giris> model = await _Giris.GetLoginsWithMail(mail);
+            List<Person> model = await _Giris.GetLoginsWithMail(mail);
             if (model == null)
             {
                 return NotFound();
             }
             return Ok(model);
-        }
+        }*/
         [HttpGet("{id}")]
         public async Task<ActionResult> GetLogin(int? id)
         {
@@ -89,7 +89,7 @@ namespace LoginWebApi.Controllers
             {
                 return BadRequest();
             }
-            Giris model = await _Giris.GetLogin(id);
+            Person model = await _Giris.GetLogin(id);
             if(model == null)
             {
                 return NotFound();
@@ -100,7 +100,7 @@ namespace LoginWebApi.Controllers
         [HttpGet]
         public IActionResult GetLogins()
         {
-            IQueryable<Giris> model = _Giris.GetLogins;
+            IQueryable<Person> model = _Giris.GetLogins;
             if(model == null)
             {
                 return NotFound();

@@ -710,11 +710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Services\\Login.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\Login.Services.csproj",
       "projectName": "Login.Services",
-      "projectPath": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Services\\Login.Services.csproj",
+      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\Login.Services.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Services\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -733,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Data\\Login.Data.csproj": {
-              "projectPath": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Data\\Login.Data.csproj"
+            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj"
             }
           }
         }

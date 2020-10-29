@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginWebApi", "LoginWebApi\LoginWebApi.csproj", "{6245A5A1-D812-49E8-B5FC-04F8763B9850}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginWebApi", "LoginWebApi\LoginWebApi.csproj", "{6245A5A1-D812-49E8-B5FC-04F8763B9850}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Services", "Login.Services\Login.Services.csproj", "{962D674D-2F86-4927-B7E1-6C57C855EA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Services", "Login.Services\Login.Services.csproj", "{962D674D-2F86-4927-B7E1-6C57C855EA9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Repo", "Login.Repo\Login.Repo.csproj", "{F1EF7D86-73A6-456A-897C-9275617D095C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Repo", "Login.Repo\Login.Repo.csproj", "{F1EF7D86-73A6-456A-897C-9275617D095C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Data", "Login.Data\Login.Data.csproj", "{CD8E9E8E-1DB2-4E62-A053-C1CA78CAF563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Data", "Login.Data\Login.Data.csproj", "{CD8E9E8E-1DB2-4E62-A053-C1CA78CAF563}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

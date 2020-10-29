@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.1": {
       "Login.Services/1.0.0": {
         "dependencies": {
-          "Login.Data": "1.0.0"
+          "Login.Data": "1.0.0",
+          "Microsoft.Extensions.Options": "2.1.1.0"
         },
         "runtime": {
           "Login.Services.dll": {}
@@ -17,6 +18,14 @@
       "Login.Data/1.0.0": {
         "runtime": {
           "Login.Data.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Options/2.1.1.0": {
+        "runtime": {
+          "Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       }
     }
@@ -29,6 +38,11 @@
     },
     "Login.Data/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Options/2.1.1.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

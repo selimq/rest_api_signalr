@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Login.Repo
 {
@@ -10,8 +11,11 @@ namespace Login.Repo
     {
         public LoginDbContext(DbContextOptions<LoginDbContext> options) :base(options) { }
 
-        public DbSet<Giris> Girisler { get; set; }
+        public DbSet<Person> Girisler { get; set; }
 
-        public DbSet<Nobet> Nobetler { get; set; } 
+        internal Task FindAsync(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

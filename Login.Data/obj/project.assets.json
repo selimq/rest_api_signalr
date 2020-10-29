@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Data\\Login.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj",
       "projectName": "Login.Data",
-      "projectPath": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Data\\Login.Data.csproj",
+      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\source\\repos\\LoginWebApi\\Login.Data\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
