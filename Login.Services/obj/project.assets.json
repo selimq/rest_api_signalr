@@ -208,14 +208,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Login.Data/1.0.0": {
+      "a/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
-          "bin/placeholder/Login.Data.dll": {}
+          "bin/placeholder/a.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Login.Data.dll": {}
+          "bin/placeholder/a.dll": {}
         }
       }
     }
@@ -691,16 +691,16 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Login.Data/1.0.0": {
+    "a/1.0.0": {
       "type": "project",
-      "path": "../Login.Data/Login.Data.csproj",
-      "msbuildProject": "../Login.Data/Login.Data.csproj"
+      "path": "../Login.Data/a.csproj",
+      "msbuildProject": "../Login.Data/a.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Login.Data >= 1.0.0",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "a >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -710,9 +710,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\Login.Services.csproj",
-      "projectName": "Login.Services",
-      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\Login.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\c.csproj",
+      "projectName": "c",
+      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\c.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\obj\\",
       "projectStyle": "PackageReference",
@@ -733,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj": {
-              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj"
+            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\a.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\a.csproj"
             }
           }
         }

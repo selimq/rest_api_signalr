@@ -4334,41 +4334,41 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "Login.Data/1.0.0": {
+      "a/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
-          "bin/placeholder/Login.Data.dll": {}
+          "bin/placeholder/a.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Login.Data.dll": {}
+          "bin/placeholder/a.dll": {}
         }
       },
-      "Login.Repo/1.0.0": {
+      "b/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Login.Data": "1.0.0",
-          "Login.Services": "1.0.0"
+          "a": "1.0.0",
+          "c": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Login.Repo.dll": {}
+          "bin/placeholder/b.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Login.Repo.dll": {}
+          "bin/placeholder/b.dll": {}
         }
       },
-      "Login.Services/1.0.0": {
+      "c/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Login.Data": "1.0.0"
+          "a": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Login.Services.dll": {}
+          "bin/placeholder/c.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Login.Services.dll": {}
+          "bin/placeholder/c.dll": {}
         }
       }
     }
@@ -11873,29 +11873,29 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "Login.Data/1.0.0": {
+    "a/1.0.0": {
       "type": "project",
-      "path": "../Login.Data/Login.Data.csproj",
-      "msbuildProject": "../Login.Data/Login.Data.csproj"
+      "path": "../Login.Data/a.csproj",
+      "msbuildProject": "../Login.Data/a.csproj"
     },
-    "Login.Repo/1.0.0": {
+    "b/1.0.0": {
       "type": "project",
-      "path": "../Login.Repo/Login.Repo.csproj",
-      "msbuildProject": "../Login.Repo/Login.Repo.csproj"
+      "path": "../Login.Repo/b.csproj",
+      "msbuildProject": "../Login.Repo/b.csproj"
     },
-    "Login.Services/1.0.0": {
+    "c/1.0.0": {
       "type": "project",
-      "path": "../Login.Services/Login.Services.csproj",
-      "msbuildProject": "../Login.Services/Login.Services.csproj"
+      "path": "../Login.Services/c.csproj",
+      "msbuildProject": "../Login.Services/c.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Login.Data >= 1.0.0",
-      "Login.Repo >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "a >= 1.0.0",
+      "b >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11928,11 +11928,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj": {
-              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj"
+            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\a.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\a.csproj"
             },
-            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\Login.Repo.csproj": {
-              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\Login.Repo.csproj"
+            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\b.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\b.csproj"
             }
           }
         }

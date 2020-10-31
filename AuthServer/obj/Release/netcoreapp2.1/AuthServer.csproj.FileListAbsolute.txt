@@ -1,0 +1,17 @@
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\AuthServer.deps.json
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\AuthServer.runtimeconfig.json
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\AuthServer.runtimeconfig.dev.json
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\AuthServer.dll
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\AuthServer.pdb
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\a.dll
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\bin\Release\netcoreapp2.1\a.pdb
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.csprojAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.RazorAssemblyInfo.cache
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.RazorAssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.AssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.RazorTargetAssemblyInfo.cache
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.csproj.CopyComplete
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.dll
+C:\Users\Asus\Documents\GitHub\loginapi\AuthServer\obj\Release\netcoreapp2.1\AuthServer.pdb

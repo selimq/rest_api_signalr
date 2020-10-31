@@ -208,27 +208,27 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Login.Data/1.0.0": {
+      "a/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
-          "bin/placeholder/Login.Data.dll": {}
+          "bin/placeholder/a.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Login.Data.dll": {}
+          "bin/placeholder/a.dll": {}
         }
       },
-      "Login.Services/1.0.0": {
+      "c/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Login.Data": "1.0.0"
+          "a": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Login.Services.dll": {}
+          "bin/placeholder/c.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Login.Services.dll": {}
+          "bin/placeholder/c.dll": {}
         }
       }
     }
@@ -704,22 +704,22 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Login.Data/1.0.0": {
+    "a/1.0.0": {
       "type": "project",
-      "path": "../Login.Data/Login.Data.csproj",
-      "msbuildProject": "../Login.Data/Login.Data.csproj"
+      "path": "../Login.Data/a.csproj",
+      "msbuildProject": "../Login.Data/a.csproj"
     },
-    "Login.Services/1.0.0": {
+    "c/1.0.0": {
       "type": "project",
-      "path": "../Login.Services/Login.Services.csproj",
-      "msbuildProject": "../Login.Services/Login.Services.csproj"
+      "path": "../Login.Services/c.csproj",
+      "msbuildProject": "../Login.Services/c.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Login.Data >= 1.0.0",
-      "Login.Services >= 1.0.0",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "a >= 1.0.0",
+      "c >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -729,9 +729,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\123.csproj",
-      "projectName": "123",
-      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\123.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\b.csproj",
+      "projectName": "b",
+      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\b.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Repo\\obj\\",
       "projectStyle": "PackageReference",
@@ -752,11 +752,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj": {
-              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\Login.Data.csproj"
+            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\a.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Data\\a.csproj"
             },
-            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\Login.Services.csproj": {
-              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\Login.Services.csproj"
+            "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\c.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\loginapi\\Login.Services\\c.csproj"
             }
           }
         }

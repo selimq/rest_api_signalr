@@ -1,0 +1,14 @@
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\bin\Release\netcoreapp2.1\APIGateway.deps.json
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\bin\Release\netcoreapp2.1\APIGateway.runtimeconfig.json
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\bin\Release\netcoreapp2.1\APIGateway.runtimeconfig.dev.json
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\bin\Release\netcoreapp2.1\APIGateway.dll
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\bin\Release\netcoreapp2.1\APIGateway.pdb
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.csprojAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.RazorAssemblyInfo.cache
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.RazorAssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.AssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.RazorTargetAssemblyInfo.cache
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.dll
+C:\Users\Asus\Documents\GitHub\loginapi\APIGateway\obj\Release\netcoreapp2.1\APIGateway.pdb

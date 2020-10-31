@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Hubs\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -20,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Login.Data\Login.Data.csproj" />
-    <ProjectReference Include="..\Login.Repo\Login.Repo.csproj" />
+    <ProjectReference Include="..\Login.Data\a.csproj" />
+    <ProjectReference Include="..\Login.Repo\b.csproj" />
   </ItemGroup>
 
 </Project>

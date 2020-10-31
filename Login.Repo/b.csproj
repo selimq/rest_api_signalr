@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Login.Data\Login.Data.csproj" />
-    <ProjectReference Include="..\Login.Services\Login.Services.csproj" />
+    <ProjectReference Include="..\Login.Data\a.csproj" />
+    <ProjectReference Include="..\Login.Services\c.csproj" />
   </ItemGroup>
 
   <ItemGroup>

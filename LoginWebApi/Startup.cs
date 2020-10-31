@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Login.Data;
 using Login.Repo;
 using Login.Services;
+using LoginWebApi.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +34,8 @@ namespace LoginWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-  
+            //signalr imp
+            services.AddSignalR();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             /*var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -82,6 +84,11 @@ namespace LoginWebApi
                 .AllowAnyMethod()
                 .AllowAnyHeader());
             app.UseAuthentication();
+            ///signalr
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chathub");
+            });      
             app.UseMvc();
         }
     }

@@ -24,11 +24,11 @@
     ".NETCoreApp,Version=v2.1": {
       "LoginWebApi/1.0.0": {
         "dependencies": {
-          "Login.Data": "1.0.0",
-          "Login.Repo": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
-          "Microsoft.NETCore.App": "2.1.0"
+          "Microsoft.NETCore.App": "2.1.0",
+          "a": "1.0.0",
+          "b": "1.0.0"
         },
         "runtime": {
           "LoginWebApi.dll": {}
@@ -209,35 +209,35 @@
           "Microsoft.NETCore.Platforms": "2.1.0"
         }
       },
-      "Login.Data/1.0.0": {
+      "a/1.0.0": {
         "runtime": {
-          "Login.Data.dll": {}
+          "a.dll": {}
         },
         "compile": {
-          "Login.Data.dll": {}
+          "a.dll": {}
         }
       },
-      "Login.Repo/1.0.0": {
+      "b/1.0.0": {
         "dependencies": {
-          "Login.Data": "1.0.0",
-          "Login.Services": "1.0.0"
+          "a": "1.0.0",
+          "c": "1.0.0"
         },
         "runtime": {
-          "Login.Repo.dll": {}
+          "b.dll": {}
         },
         "compile": {
-          "Login.Repo.dll": {}
+          "b.dll": {}
         }
       },
-      "Login.Services/1.0.0": {
+      "c/1.0.0": {
         "dependencies": {
-          "Login.Data": "1.0.0"
+          "a": "1.0.0"
         },
         "runtime": {
-          "Login.Services.dll": {}
+          "c.dll": {}
         },
         "compile": {
-          "Login.Services.dll": {}
+          "c.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3244,17 +3244,17 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "Login.Data/1.0.0": {
+    "a/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Login.Repo/1.0.0": {
+    "b/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Login.Services/1.0.0": {
+    "c/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
