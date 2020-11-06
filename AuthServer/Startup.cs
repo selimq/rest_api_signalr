@@ -37,14 +37,14 @@ namespace AuthServer
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var appSettingsSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingsSection);
+           
 
             services.AddDbContext<LoginDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<ILogin, LoginRepo>();
 
 
-
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
             // JWT authentication Aayarlaması
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);

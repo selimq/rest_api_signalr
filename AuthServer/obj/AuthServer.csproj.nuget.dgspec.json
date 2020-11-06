@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/falcon/Projects/loginapi/AuthServer/AuthServer.csproj": {}
+  },
+  "projects": {
+    "/home/falcon/Projects/loginapi/AuthServer/AuthServer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/falcon/Projects/loginapi/AuthServer/AuthServer.csproj",
+        "projectName": "AuthServer",
+        "projectPath": "/home/falcon/Projects/loginapi/AuthServer/AuthServer.csproj",
+        "packagesPath": "/home/falcon/.nuget/packages/",
+        "outputPath": "/home/falcon/Projects/loginapi/AuthServer/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/falcon/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/home/falcon/Projects/loginapi/Login.Data/a.csproj": {
+                "projectPath": "/home/falcon/Projects/loginapi/Login.Data/a.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.8, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/home/falcon/Projects/loginapi/Login.Data/a.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/falcon/Projects/loginapi/Login.Data/a.csproj",
+        "projectName": "a",
+        "projectPath": "/home/falcon/Projects/loginapi/Login.Data/a.csproj",
+        "packagesPath": "/home/falcon/.nuget/packages/",
+        "outputPath": "/home/falcon/Projects/loginapi/Login.Data/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/falcon/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.8, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+/home/falcon/Projects/loginapi/APIGateway/bin/Debug/netcoreapp2.1/APIGateway.deps.json
+/home/falcon/Projects/loginapi/APIGateway/bin/Debug/netcoreapp2.1/APIGateway.runtimeconfig.json
+/home/falcon/Projects/loginapi/APIGateway/bin/Debug/netcoreapp2.1/APIGateway.runtimeconfig.dev.json
+/home/falcon/Projects/loginapi/APIGateway/bin/Debug/netcoreapp2.1/APIGateway.dll
+/home/falcon/Projects/loginapi/APIGateway/bin/Debug/netcoreapp2.1/APIGateway.pdb
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.csprojAssemblyReference.cache
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.csproj.CoreCompileInputs.cache
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.RazorAssemblyInfo.cache
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.RazorAssemblyInfo.cs
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.AssemblyInfoInputs.cache
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.AssemblyInfo.cs
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.RazorTargetAssemblyInfo.cache
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.dll
+/home/falcon/Projects/loginapi/APIGateway/obj/Debug/netcoreapp2.1/APIGateway.pdb

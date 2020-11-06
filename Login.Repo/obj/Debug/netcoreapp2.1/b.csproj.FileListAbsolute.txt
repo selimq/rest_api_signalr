@@ -1,0 +1,14 @@
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.csprojAssemblyReference.cache
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.csproj.CoreCompileInputs.cache
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.AssemblyInfoInputs.cache
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.AssemblyInfo.cs
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/b.deps.json
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/b.dll
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/b.pdb
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/a.dll
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/c.dll
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/a.pdb
+/home/falcon/Projects/loginapi/Login.Repo/bin/Debug/netcoreapp2.1/c.pdb
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.csproj.CopyComplete
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.dll
+/home/falcon/Projects/loginapi/Login.Repo/obj/Debug/netcoreapp2.1/b.pdb

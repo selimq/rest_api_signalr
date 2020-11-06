@@ -45,7 +45,7 @@ namespace LoginWebApi
             services.AddTransient<ILogin, LoginRepo>();
 
 
-
+                
             // JWT authentication Aayarlaması
           
             var key = Encoding.ASCII.GetBytes("12345678909876543211234567890");
@@ -54,6 +54,7 @@ namespace LoginWebApi
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
+            
             .AddJwtBearer(x =>
             {
                 x.RequireHttpsMetadata = false;
@@ -65,6 +66,24 @@ namespace LoginWebApi
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
+                x.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
+                        {
+                            var accessToken = context.Request.Query["access_token"];
+
+                            // If the request is for our hub...
+                            var path = context.HttpContext.Request.Path;
+                            if (!string.IsNullOrEmpty(accessToken) &&
+                                (path.StartsWithSegments("/chathub")))
+                            {
+                                // Read the token out of the query string
+                                context.Token = accessToken;
+                            }
+                            return Task.CompletedTask;
+                        }
+                    };
+
             });
       }
 

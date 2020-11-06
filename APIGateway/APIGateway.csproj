@@ -13,6 +13,8 @@
     <PackageReference Include="CacheManager.Microsoft.Extensions.Logging" Version="1.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.8" />
+    <PackageReference Include="Microsoft.IdentityModel" Version="7.0.0" />
     <PackageReference Include="Ocelot" Version="13.0.0" />
   </ItemGroup>
 
