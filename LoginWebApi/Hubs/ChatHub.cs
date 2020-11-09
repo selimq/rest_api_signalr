@@ -11,9 +11,11 @@ namespace LoginWebApi.Hubs
     [Authorize]
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string user, string msg)
-        {
-            await Clients.All.SendAsync("OnMessage",  new object[]{user, msg});
-        }
+        public void Send(string name, string message)
+    {
+      // Call the "OnMessage" method to update clients.
+      Clients.All.SendCoreAsync("OnMessage", new object[]{name, message});
+    }
+
     }
 }

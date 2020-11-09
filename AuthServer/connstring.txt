@@ -1,0 +1,1 @@
+   // "DefaultConnection": "Data Source=localhost,1433;Initial Catalog=Girisler;User ID=SA;Password=Selim668;"
