@@ -15,5 +15,6 @@
             "username": "SA",
             "database": "Girisler"
         }
-    ]
+    ],
+    "errorLens.statusBarMessageEnabled": true
 }
