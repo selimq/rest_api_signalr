@@ -47,6 +47,7 @@ namespace LoginWebApi
 
             services.AddDbContext<LoginDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<ILogin, LoginRepo>();
+            services.AddTransient<IMessages,MessageRepo>();
 
 
 

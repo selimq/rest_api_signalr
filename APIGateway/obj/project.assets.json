@@ -2684,7 +2684,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Ocelot/13.0.0": {
+      "Ocelot/11.0.0": {
         "type": "package",
         "dependencies": {
           "FluentValidation": "7.6.104",
@@ -7265,15 +7265,15 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "Ocelot/13.0.0": {
-      "sha512": "565i6/4+BZt0LyXnWTfZtm5WSH/8pZOsRzqoLQOdXdgpONLL9lBpEhcg/RutjNhYoaG78pvIvCwamuZN57rfaw==",
+    "Ocelot/11.0.0": {
+      "sha512": "v6asMNdJ1+Ff70OMdwYbJHtqmvk+uqsucfcA1GqpvSYO8ND1wkGKfugEv8ib9efr5QTFu/A5QuqFXWW8ImV6Ug==",
       "type": "package",
-      "path": "ocelot/13.0.0",
+      "path": "ocelot/11.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Ocelot.dll",
-        "ocelot.13.0.0.nupkg.sha512",
+        "ocelot.11.0.0.nupkg.sha512",
         "ocelot.nuspec"
       ]
     },
@@ -12142,7 +12142,7 @@
       "Microsoft.EntityFrameworkCore >= 2.1.8",
       "Microsoft.IdentityModel >= 7.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Ocelot >= 13.0.0"
+      "Ocelot >= 11.0.0"
     ]
   },
   "packageFolders": {
@@ -12218,7 +12218,7 @@
           },
           "Ocelot": {
             "target": "Package",
-            "version": "[13.0.0, )"
+            "version": "[11.0.0, )"
           }
         },
         "imports": [
