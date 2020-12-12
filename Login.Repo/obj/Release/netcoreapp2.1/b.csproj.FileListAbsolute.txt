@@ -41,3 +41,10 @@ C:/Users/Asus/Documents/GitHub/loginapi/Login.Repo/obj/Release/netcoreapp2.1/b.p
 /home/falcon/Projects/loginapi/Login.Repo/selim/c.dll
 /home/falcon/Projects/loginapi/Login.Repo/selim/a.pdb
 /home/falcon/Projects/loginapi/Login.Repo/selim/c.pdb
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/b.deps.json
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/b.dll
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/b.pdb
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/a.dll
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/c.dll
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/a.pdb
+/home/falcon/Projects/loginapi/Login.Repo/bin/Release/netcoreapp2.1/c.pdb

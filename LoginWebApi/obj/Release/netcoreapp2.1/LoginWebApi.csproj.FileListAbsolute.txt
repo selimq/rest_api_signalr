@@ -75,3 +75,14 @@ C:/Users/Asus/Documents/GitHub/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/c.
 /home/falcon/Projects/loginapi/LoginWebApi/selim/a.pdb
 /home/falcon/Projects/loginapi/LoginWebApi/selim/b.pdb
 /home/falcon/Projects/loginapi/LoginWebApi/selim/c.pdb
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/LoginWebApi.deps.json
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/LoginWebApi.runtimeconfig.json
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/LoginWebApi.runtimeconfig.dev.json
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/LoginWebApi.dll
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/LoginWebApi.pdb
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/a.dll
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/b.dll
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/c.dll
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/a.pdb
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/b.pdb
+/home/falcon/Projects/loginapi/LoginWebApi/bin/Release/netcoreapp2.1/c.pdb

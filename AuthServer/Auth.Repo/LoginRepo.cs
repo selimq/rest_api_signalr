@@ -54,7 +54,7 @@ namespace Auth.Repo
             else
             {
                 model.Flag = false;
-                model.Message = "Geçerli personel bulunamadı.";
+                model.Message = "Geçerli kullanıcı bulunamadı.";
             }
             return model;
         }
@@ -138,7 +138,7 @@ namespace Auth.Repo
                     new Claim(ClaimTypes.Role , user.Role),
                     new Claim(ClaimTypes.GivenName ,user.Ad)
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(22),
+                Expires = DateTime.UtcNow.AddDays(360),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);

@@ -46,10 +46,13 @@ namespace LoginWebApi
             services.Configure<AppSettings>(appSettingsSection);*/
 
             services.AddDbContext<LoginDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddTransient<ILogin, LoginRepo>();
-            services.AddTransient<IMessages,MessageRepo>();
 
+            services.AddTransient<IConnection, LoginRepo>();
+            services.AddTransient<ICache, LoginRepo>();
 
+            //services.AddTransient<IMessages, LoginRepo>();
 
             // JWT authentication Aayarlaması
 

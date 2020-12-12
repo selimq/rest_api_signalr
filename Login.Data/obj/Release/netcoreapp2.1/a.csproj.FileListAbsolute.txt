@@ -19,3 +19,6 @@ C:/Users/Asus/Documents/GitHub/loginapi/Login.Data/obj/Release/netcoreapp2.1/a.p
 /home/falcon/Projects/loginapi/Login.Data/selim/a.deps.json
 /home/falcon/Projects/loginapi/Login.Data/selim/a.dll
 /home/falcon/Projects/loginapi/Login.Data/selim/a.pdb
+/home/falcon/Projects/loginapi/Login.Data/bin/Release/netcoreapp2.1/a.deps.json
+/home/falcon/Projects/loginapi/Login.Data/bin/Release/netcoreapp2.1/a.dll
+/home/falcon/Projects/loginapi/Login.Data/bin/Release/netcoreapp2.1/a.pdb

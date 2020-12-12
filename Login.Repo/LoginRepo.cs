@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Login.Repo
 {
-    public class LoginRepo : ILogin
+    public class LoginRepo : ILogin, IConnection, ICache//,IMessages
     {
         private readonly LoginDbContext _db;
         public LoginRepo(LoginDbContext db)
@@ -21,10 +21,11 @@ namespace Login.Repo
             _db = db;
         }
 
+
         IQueryable<Person> ILogin.GetLogins => _db.Girisler;
 
+        IQueryable<Connection> IConnection.GetConnections => _db.Connection;
 
-       
         //Login
         public async Task<POJO> Delete(int? id)
         {
@@ -57,35 +58,15 @@ namespace Login.Repo
         public async Task<Person> GetLogin(int? id)
         {
             Person login = new Person();
-            if(id != null)
+            if (id != null)
             {
                 login = await _db.Girisler.FindAsync(id);
             }
             return login;
         }
 
-     /*   public async Task<Person> GetLoginWithMail(String mail)
-        {
-            Person login = new Person();
-            if (mail != null)
-            {
-                login = await _db.Girisler.Where(x => x.Mail ==mail).FirstOrDefaultAsync();
-         
-            }
-            return login;
-        }
 
-        public async Task<List<Person>> GetLoginsWithMail(String mail)
-        {
-            List<Person> logins = new List<Person>();
-            if (mail != null)
-            {
-                logins = await _db.Girisler.Where(i => i.Mail == mail).ToListAsync();
-            }
-            return logins;
-        }*/
-
-public async Task<POJO> Save(Person login)
+        public async Task<POJO> Save(Person login)
         {
             POJO model = new POJO();
             //Add
@@ -93,7 +74,7 @@ public async Task<POJO> Save(Person login)
             {
                 try
                 {
-                    await _db.AddAsync(login);
+                    await _db.Girisler.AddAsync(login);
                     await _db.SaveChangesAsync();
 
                     model.Id = login.Id;
@@ -115,7 +96,7 @@ public async Task<POJO> Save(Person login)
                 _Entity.Soyad = login.Soyad;
                 _Entity.Mail = login.Mail;
                 _Entity.Sifre = login.Sifre;
-              
+
                 try
                 {
                     await _db.SaveChangesAsync();
@@ -133,7 +114,7 @@ public async Task<POJO> Save(Person login)
         }
 
 
-        public async Task<Person> Authenticate(String ad,String sifre)
+        public async Task<Person> Authenticate(String ad, String sifre)
         {
             Person user = await _db.Girisler.SingleOrDefaultAsync(x => x.Ad == ad && x.Sifre == sifre);
             if (user == null)
@@ -159,5 +140,160 @@ public async Task<POJO> Save(Person login)
             return user;
         }
 
+
+
+        /// Conn state
+
+        public async Task<POJO> _Save(Connection connection)
+        {
+
+            POJO model = new POJO();
+
+            if (connection.ConnectionID == 0)
+            {
+                try
+                {
+                    await _db.Connection.AddAsync(connection);
+                    await _db.SaveChangesAsync();
+                    model.Id = connection.ConnectionID;
+                    model.Flag = true;
+                    model.Message = "Comp";
+                }
+                catch (Exception e)
+                {
+                    model.Flag = false;
+                    model.Message = "hata" + e.ToString();
+
+                }
+            }
+            else if (connection.ConnectionID != 0)
+            {
+                Connection conn = new Connection();
+                conn = await _GetConnection(connection.UserName);
+                conn.ConnectionID = connection.ConnectionID;
+                conn.Connected = connection.Connected;
+                conn.UserName = connection.UserName;
+
+                try
+                {
+                    await _db.SaveChangesAsync();
+                    model.Id = int.Parse(connection.UserName);
+                    model.Flag = true;
+                    model.Message = "Comp";
+                }
+                catch (Exception e)
+                {
+                    model.Flag = false;
+                    model.Message = "hata" + e.ToString();
+
+                }
+
+            }
+            return model;
+        }
+        public async Task<Connection> _GetConnection(String name)
+        {
+            Connection connection = new Connection();
+            if (name != null)
+            {
+                connection = await _db.Connection.Where(x => x.UserName == name).FirstOrDefaultAsync();
+            }
+            return connection;
+
+        }
+
+
+
+
+        //Messages
+        /*
+        public async Task Save(ChatMessage message)
+        {
+
+            if (message.id == 0)
+            {
+
+                await _db.Messages.AddAsync(message);
+                await _db.SaveChangesAsync();
+
+            }
+            else if (message.id != 0)
+            {
+                ChatMessage msg = new ChatMessage();
+                msg = await GetMessage(message.id);
+                msg.id = message.id;
+                msg.Message = message.Message;
+                msg.Sender = message.Sender;
+                msg.ToUser = message.ToUser;
+                msg.Time = message.Time;
+                msg.IsRead = message.IsRead;
+                msg.IsSend = msg.IsSend;
+
+
+                await _db.SaveChangesAsync();
+            }
+
+        }
+
+
+        public async Task<ChatMessage> GetMessage(int id)
+        {
+            ChatMessage msg = new ChatMessage();
+            if (id != 0)
+            {
+                msg = await _db.Messages.FindAsync(id);
+            }
+            return msg;
+        }*/
+
+
+        //CACHE
+
+
+        public async Task Save(CacheMessage message)
+        {
+
+            if (message.id == 0)
+            {
+
+                await _db.CacheMessages.AddAsync(message);
+                await _db.SaveChangesAsync();
+
+            }
+            else if (message.id != 0)
+            {
+                CacheMessage msg = new CacheMessage();
+                msg = await GetMessage(message.id);
+                msg.id = message.id;
+                msg.Message = message.Message;
+                msg.Sender = message.Sender;
+                msg.ToUser = message.ToUser;
+                await _db.SaveChangesAsync();
+            }
+
+        }
+
+
+        public async Task<CacheMessage> GetMessage(int id)
+        {
+            CacheMessage msg = new CacheMessage();
+            if (id != 0)
+            {
+                msg = await _db.CacheMessages.FindAsync(id);
+            }
+            return msg;
+        }
+
+        public async Task<List<CacheMessage>> GetMessages(string user)
+        {
+            List<CacheMessage> messages;
+            messages = await _db.CacheMessages.Where(x => x.ToUser == user).ToListAsync();
+            return messages;
+        }
+        public   void Delete(CacheMessage message)
+        {
+             _db.CacheMessages.Remove(message);
+             _db.SaveChanges();
+        }
     }
 }

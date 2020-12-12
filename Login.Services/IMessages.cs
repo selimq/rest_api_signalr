@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace Login.Services{
     public interface IMessages{
-        Task<ChatMessage> Save (ChatMessage message);
-        Task<List<ChatMessage>> GetHistory();
+        Task Save (ChatMessage message);
+        Task<ChatMessage> GetMessage (int id);
 
     }
 }

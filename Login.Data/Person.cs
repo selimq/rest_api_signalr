@@ -12,5 +12,6 @@ namespace Login.Data
         public String Mail { get; set; }
         public String Sifre { get; set; }
         public String Token { get; set; }
+
     }
 }

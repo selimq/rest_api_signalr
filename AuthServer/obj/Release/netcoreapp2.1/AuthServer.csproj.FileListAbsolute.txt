@@ -39,3 +39,10 @@ C:/Users/Asus/Documents/GitHub/loginapi/AuthServer/obj/Release/netcoreapp2.1/Aut
 /home/falcon/Projects/loginapi/AuthServer/selim/AuthServer.pdb
 /home/falcon/Projects/loginapi/AuthServer/selim/a.dll
 /home/falcon/Projects/loginapi/AuthServer/selim/a.pdb
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/AuthServer.deps.json
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/AuthServer.runtimeconfig.json
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/AuthServer.runtimeconfig.dev.json
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/AuthServer.dll
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/AuthServer.pdb
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/a.dll
+/home/falcon/Projects/loginapi/AuthServer/bin/Release/netcoreapp2.1/a.pdb

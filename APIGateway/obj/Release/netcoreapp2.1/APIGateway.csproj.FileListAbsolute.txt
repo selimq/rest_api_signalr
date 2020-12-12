@@ -31,3 +31,8 @@ C:/Users/Asus/Documents/GitHub/loginapi/APIGateway/obj/Release/netcoreapp2.1/API
 /home/falcon/Projects/loginapi/APIGateway/selim/APIGateway.runtimeconfig.dev.json
 /home/falcon/Projects/loginapi/APIGateway/selim/APIGateway.dll
 /home/falcon/Projects/loginapi/APIGateway/selim/APIGateway.pdb
+/home/falcon/Projects/loginapi/APIGateway/bin/Release/netcoreapp2.1/APIGateway.deps.json
+/home/falcon/Projects/loginapi/APIGateway/bin/Release/netcoreapp2.1/APIGateway.runtimeconfig.json
+/home/falcon/Projects/loginapi/APIGateway/bin/Release/netcoreapp2.1/APIGateway.runtimeconfig.dev.json
+/home/falcon/Projects/loginapi/APIGateway/bin/Release/netcoreapp2.1/APIGateway.dll
+/home/falcon/Projects/loginapi/APIGateway/bin/Release/netcoreapp2.1/APIGateway.pdb

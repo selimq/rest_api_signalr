@@ -9,5 +9,14 @@ public class ChatMessage
     public DateTime Time { get; set; }
     public bool IsRead { get; set; }
     public bool IsSend { get; set; }
+    
+    public ChatMessage(){}
+    public ChatMessage(string Sender,string ToUser,string Message,bool IsSend){
+            this.Sender  = Sender;
+            this.ToUser = ToUser;
+            this.Message = Message;
+            this.IsSend = IsSend;
+
+    }
 
 }
