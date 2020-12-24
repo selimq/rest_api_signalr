@@ -10,6 +10,7 @@ using LoginWebApi.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -112,11 +113,27 @@ namespace LoginWebApi
                .AllowAnyHeader());
             app.UseAuthentication();
             ///signalr
-
+          
             app.UseSignalR(routes =>
             {
-                routes.MapHub<ChatHub>("/chathub");
+                routes.MapHub<ChatHub>("/chathub" ,options =>
+          {
+              
+              options.WebSockets.CloseTimeout = TimeSpan.FromMilliseconds(0);
+          });
+
             });
+/*
+     configure =>
+          {
+          configure.MapHub<ChatHub>("/chathub", options =>
+          {
+              
+              options.Transports = HttpTransportType.WebSockets;
+              options.WebSockets.CloseTimeout = TimeSpan.FromMilliseconds(0);
+          });
+              app.UseSignalR(
+      });*/
             app.UseMvc();
         }
     }

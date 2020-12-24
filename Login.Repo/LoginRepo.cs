@@ -268,6 +268,7 @@ namespace Login.Repo
                 msg.Message = message.Message;
                 msg.Sender = message.Sender;
                 msg.ToUser = message.ToUser;
+                msg.Time  = message.Time;
                 await _db.SaveChangesAsync();
             }
 
