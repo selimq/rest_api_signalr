@@ -1,5 +1,5 @@
 using System;
-
+[Serializable]
 public class ChatMessage
 {
     public int id { get; set; }

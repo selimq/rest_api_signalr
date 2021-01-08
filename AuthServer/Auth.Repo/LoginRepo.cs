@@ -103,6 +103,7 @@ namespace Auth.Repo
                 _Entity.Mail = login.Mail;
                 _Entity.Sifre = login.Sifre;
                 _Entity.Role = login.Role;
+                _Entity.PublicKey = login.PublicKey;
               
                 try
                 {

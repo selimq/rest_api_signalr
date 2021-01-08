@@ -13,5 +13,6 @@ namespace Auth.Data
         public String Sifre { get; set; }
         public String Token { get; set; }
         public String Role { get; set; }
+        public String PublicKey {get;set;}
     }
 }

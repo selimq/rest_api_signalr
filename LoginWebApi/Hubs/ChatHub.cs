@@ -43,13 +43,17 @@ namespace LoginWebApi.Hubs
         public async Task SendPrivate(String json)
         {   
             ChatMessage chatMessage =JsonConvert.DeserializeObject<ChatMessage>(json, 
-             new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff" });
+             new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff", }
+            );  
+         
                                                        
             Connection User = await conn._GetConnection(chatMessage.ToUser);
             
             Person  Sender = await login.GetLogin(int.Parse(chatMessage.Sender));
 
-            string Json = JsonConvert.SerializeObject(chatMessage,Formatting.Indented);
+        
+
+            string Json = JsonConvert.SerializeObject(chatMessage,Formatting.None);
             if (User.Connected == '1')
             {
                 await Clients.User(chatMessage.ToUser).SendCoreAsync("OnMessage", new object[] { Json });

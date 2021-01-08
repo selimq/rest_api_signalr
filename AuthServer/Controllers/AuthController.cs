@@ -65,5 +65,25 @@ namespace AuthServer.Controllers
 
             return Ok(model);
         }
+        [HttpPost("Save")]
+        public async Task<IActionResult> Save([FromBody] Person user)
+        {
+            if (login == null)
+            {
+                return BadRequest();
+            }
+            POJO model = await login.Save(user);
+            if (model == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                await login.Save(user);
+                return Ok();
+            }
+
+
+        }
     }
 }

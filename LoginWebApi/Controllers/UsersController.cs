@@ -14,9 +14,11 @@ namespace LoginWebApi.Controllers
     public class UsersController : ControllerBase
     {
         private readonly ILogin login;
-        public UsersController (ILogin _login)
+        private readonly IConnection connection;
+        public UsersController (ILogin _login,IConnection _connection)
         {
             login = _login;
+            connection = _connection;
         }
 
         [AllowAnonymous]
@@ -38,6 +40,14 @@ namespace LoginWebApi.Controllers
                 return NotFound();
             }
             return Ok(model);
+        }
+        [Route("getconnection/{userName}")]
+        [HttpGet("{userName}")]
+        public async Task<IActionResult> GetConnection(String userName)
+        {
+            Connection user = await connection._GetConnection(userName);
+            
+            return Ok(user);
         }
     }
 }
