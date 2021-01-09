@@ -175,7 +175,7 @@ namespace Login.Repo
                 conn.ConnectionID = connection.ConnectionID;
                 conn.Connected = connection.Connected;
                 conn.UserName = connection.UserName;
-
+                conn.LastSeen = connection.LastSeen;
                 try
                 {
                     await _db.SaveChangesAsync();

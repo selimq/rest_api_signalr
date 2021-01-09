@@ -123,6 +123,8 @@ namespace LoginWebApi.Hubs
             await base.OnDisconnectedAsync(exception);
             Connection connection = await conn._GetConnection(Context.UserIdentifier);
             connection.Connected = '0';
+            connection.LastSeen = DateTime.Now;
+            
             await conn._Save(connection);
 
         }
