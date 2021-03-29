@@ -19,7 +19,8 @@ namespace Auth.Repo
         private readonly LoginDbContext _db;
 
         private readonly AppSettings appSettings;
-
+ 
+ 
         public LoginRepo(LoginDbContext db , IOptions<AppSettings> _appSettings)
         {
             _db = db;
