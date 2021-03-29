@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Login.Data;
@@ -49,7 +47,7 @@ namespace LoginWebApi
             services.AddDbContext<LoginDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<ILogin, LoginRepo>();
-
+            services.AddTransient<IPhoto,LoginRepo>();
             services.AddTransient<IConnection, LoginRepo>();
             services.AddTransient<ICache, LoginRepo>();
 
@@ -112,14 +110,18 @@ namespace LoginWebApi
                .AllowAnyMethod()
                .AllowAnyHeader());
             app.UseAuthentication();
+
+            app.UseStaticFiles();
             ///signalr
           
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatHub>("/chathub" ,options =>
           {
-              
+         
+            options.ApplicationMaxBufferSize = 1500000;
               options.WebSockets.CloseTimeout = TimeSpan.FromMilliseconds(0);
+              
           });
 
             });

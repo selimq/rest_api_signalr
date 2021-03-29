@@ -16,8 +16,8 @@ namespace Login.Repo
         public DbSet<Person> Girisler { get; set; }
         public DbSet<Connection> Connection { get; set; }
         public DbSet<ChatMessage> Messages { get; set; }
-
         public DbSet<CacheMessage> CacheMessages{get;set;}
+        public DbSet<Photo> Images{get;set;}
 
     }
 }

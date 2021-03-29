@@ -1,0 +1,4 @@
+/home/falcon/Projects/loginapi/Login.Data/obj/Debug/netcoreapp2.1/a.csprojAssemblyReference.cache
+/home/falcon/Projects/loginapi/Login.Data/obj/Debug/netcoreapp2.1/a.csproj.CoreCompileInputs.cache
+/home/falcon/Projects/loginapi/Login.Data/obj/Debug/netcoreapp2.1/a.AssemblyInfoInputs.cache
+/home/falcon/Projects/loginapi/Login.Data/obj/Debug/netcoreapp2.1/a.AssemblyInfo.cs

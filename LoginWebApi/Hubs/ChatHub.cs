@@ -32,41 +32,42 @@ namespace LoginWebApi.Hubs
             cache = _cache;
             ClientFireBase = StartFireBase();
         }
-         private HttpClient StartFireBase()
-         {
-             var client = new HttpClient();
-             client.BaseAddress = new Uri("https://fcm.googleapis.com");
-             return client;
-         }
+        private HttpClient StartFireBase()
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://fcm.googleapis.com");
+            return client;
+        }
 
 
         public async Task SendPrivate(String json)
-        {   
-            ChatMessage chatMessage =JsonConvert.DeserializeObject<ChatMessage>(json, 
+        {
+            ChatMessage chatMessage = JsonConvert.DeserializeObject<ChatMessage>(json,
              new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff", }
-            );  
-         
-                                                       
+            );
+
+
             Connection User = await conn._GetConnection(chatMessage.ToUser);
-            
-            Person  Sender = await login.GetLogin(int.Parse(chatMessage.Sender));
 
-        
+            Person Sender = await login.GetLogin(int.Parse(chatMessage.Sender));
 
-            string Json = JsonConvert.SerializeObject(chatMessage,Formatting.None);
+
+
+            string Json = JsonConvert.SerializeObject(chatMessage, Formatting.None);
             if (User.Connected == '1')
             {
                 await Clients.User(chatMessage.ToUser).SendCoreAsync("OnMessage", new object[] { Json });
             }
             else
             {
-       
-            List<CacheMessage> messages = await cache.GetMessages(chatMessage.ToUser); 
-            String text ="";
-            foreach(CacheMessage _message in messages){
-                text += _message.Message  + _message.Time+ "\n" ;
-            }
-            text +=chatMessage.Message;
+
+                List<CacheMessage> messages = await cache.GetMessages(chatMessage.ToUser);
+                String text = "";
+                foreach (CacheMessage _message in messages)
+                {
+                    text += _message.Message + _message.Time + "\n";
+                }
+                text += chatMessage.Message;
 
                 var body = new
                 {
@@ -75,7 +76,7 @@ namespace LoginWebApi.Hubs
                         body = text,
                         title = Sender.Ad,
                         tag = User.UserName
-                     
+
                     },
                     priority = "high",
                     sound = "1",
@@ -84,7 +85,7 @@ namespace LoginWebApi.Hubs
                         clickaction = "FLUTTERNOTIFICATIONCLICK",
                         id = "1",
                         status = "done",
-                      
+
                     },
                     to = "/topics/all"
                 };
@@ -97,17 +98,18 @@ namespace LoginWebApi.Hubs
                 var retFireBase = await response.Content.ReadAsStringAsync();
 
 
-                 CacheMessage msg = new CacheMessage();
+                CacheMessage msg = new CacheMessage();
                 msg.Message = chatMessage.Message;
                 msg.ToUser = chatMessage.ToUser;
                 msg.Sender = chatMessage.Sender;
-                msg.Time  = chatMessage.Time;
+                msg.Time = chatMessage.Time;
+                msg.TypeId = chatMessage.TypeId;
                 await cache.Save(msg);
             }
         }
         public override async Task OnConnectedAsync()
         {
-           // await Clients.All.SendCoreAsync("S", new object[] { "  ", "   ", $"{Context.UserIdentifier} katıldı." });
+            // await Clients.All.SendCoreAsync("S", new object[] { "  ", "   ", $"{Context.UserIdentifier} katıldı." });
             await base.OnConnectedAsync();
             Connection user = await conn._GetConnection(Context.UserIdentifier);
             user.Connected = '1';
@@ -124,7 +126,7 @@ namespace LoginWebApi.Hubs
             Connection connection = await conn._GetConnection(Context.UserIdentifier);
             connection.Connected = '0';
             connection.LastSeen = DateTime.Now;
-            
+
             await conn._Save(connection);
 
         }
@@ -133,23 +135,36 @@ namespace LoginWebApi.Hubs
         public async Task SendPendingMessages(string user)
         {
             List<CacheMessage> messages = await cache.GetMessages(user);
-          /*  if (messages == null)
+            /*  if (messages == null)
+              {
+
+                  await Clients.All.SendCoreAsync("OnMessage", new object[] { "  ", "   ", $"{Context.UserIdentifier}." });
+
+              }
+              else
+              {*/
+            foreach (CacheMessage message in messages)
             {
-
-                await Clients.All.SendCoreAsync("OnMessage", new object[] { "  ", "   ", $"{Context.UserIdentifier}." });
-
+                string json = JsonConvert.SerializeObject(message, Formatting.Indented);
+                await Clients.User(message.ToUser).SendCoreAsync("OnMessage", new object[] { json });
+                cache.Delete(message);
             }
-            else
-            {*/
-                foreach (CacheMessage message in messages)
-                {
-                    string json = JsonConvert.SerializeObject(message,Formatting.Indented);
-                    await Clients.User(message.ToUser).SendCoreAsync("OnMessage", new object[] { json });
-                     cache.Delete(message);
-                }
-         //s   }
+            //s   }
 
 
+        }
+
+        ///WEBRTC
+        public async Task StartCall(String webRtcMessage)
+        {
+            WebRTCMessage webRTCObject = JsonConvert.DeserializeObject<WebRTCMessage>(webRtcMessage);
+            await Clients.User(webRTCObject.To).SendCoreAsync("WebRTC", new object[] { webRtcMessage });
+        }
+
+        public async Task AnswerCall(String webRtcMessage)
+        {
+            WebRTCMessage webRTCObject = JsonConvert.DeserializeObject<WebRTCMessage>(webRtcMessage);
+            await Clients.User(webRTCObject.To).SendCoreAsync("WebRTC", new object[] { webRtcMessage });
         }
     }
 }

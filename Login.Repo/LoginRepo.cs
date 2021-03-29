@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Login.Repo
 {
-    public class LoginRepo : ILogin, IConnection, ICache//,IMessages
+    public class LoginRepo : ILogin, IConnection, ICache, IPhoto//,IMessages
     {
         private readonly LoginDbContext _db;
         public LoginRepo(LoginDbContext db)
@@ -64,7 +64,6 @@ namespace Login.Repo
             }
             return login;
         }
-
 
         public async Task<POJO> Save(Person login)
         {
@@ -270,7 +269,8 @@ namespace Login.Repo
                 msg.Message = message.Message;
                 msg.Sender = message.Sender;
                 msg.ToUser = message.ToUser;
-                msg.Time  = message.Time;
+                msg.Time = message.Time;
+                msg.TypeId = message.TypeId;
                 await _db.SaveChangesAsync();
             }
 
@@ -293,10 +293,73 @@ namespace Login.Repo
             messages = await _db.CacheMessages.Where(x => x.ToUser == user).ToListAsync();
             return messages;
         }
-        public   void Delete(CacheMessage message)
+        public void Delete(CacheMessage message)
         {
-             _db.CacheMessages.Remove(message);
-             _db.SaveChanges();
+            _db.CacheMessages.Remove(message);
+            _db.SaveChanges();
         }
+
+        //PHOTO
+
+        public async Task<POJO> SavePhoto(Photo photo)
+        {
+
+            POJO pojo = new POJO();
+            try
+            {
+
+                Photo pht = new Photo();
+                pht = await GetPhoto(photo.Id);
+                pht.Photo64 = photo.Photo64;
+                await _db.SaveChangesAsync();
+
+                pojo.Flag = true;
+                pojo.Message = "Başarıyla eklendi.";
+                pojo.Id = photo.Id;
+                return pojo;
+
+            }
+            catch (Exception e)
+            {
+                pojo.Message = e.Data + "Hatası";
+                pojo.Flag = false;
+                return pojo;
+            }
+
+        }
+        public async Task<Photo> GetPhoto(int? id)
+        {
+            Photo photo = new Photo();
+            if (id != 0)
+            {
+
+                photo = await _db.Images.FindAsync(id);
+                Console.WriteLine(photo.Photo64);
+
+            }
+            return photo;
+
+        }
+        public async Task<POJO> DeletePhoto(int? id)
+        {
+            POJO pojo = new POJO();
+            try{
+                Photo photo = await GetPhoto(id);
+            _db.Images.Remove(photo);
+            _db.SaveChanges();
+            pojo.Flag = true;
+            pojo.Message = "Başarıyla silindi.";
+            return pojo;
+            }
+            catch(Exception e) {
+                pojo.Flag = false;
+                pojo.Message="Hata" + e.Data ;
+                return pojo;
+            }
+             }
+
+
+
     }
+
 }
