@@ -17,7 +17,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace LoginWebApi.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class LoginController : ControllerBase
@@ -36,6 +35,9 @@ namespace LoginWebApi.Controllers
              client.BaseAddress = new Uri("https://fcm.googleapis.com");
              return client;
          }*/
+
+        [Authorize]
+
         [HttpPost]
         public async Task<IActionResult> Save([FromBody] Person login)
         {
@@ -86,6 +88,8 @@ namespace LoginWebApi.Controllers
               }
               return Ok(model);
           }*/
+        [Authorize]
+
         [HttpGet("{id}")]
         public async Task<ActionResult> GetLogin(int? id)
         {
@@ -111,6 +115,8 @@ namespace LoginWebApi.Controllers
             }
             return Ok(model);
         }
+        [Authorize]
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -126,19 +132,22 @@ namespace LoginWebApi.Controllers
             return Ok(model);
 
         }
+        [Authorize]
+
         [Route("withmails/")]
         public IActionResult GetId()
         {
             //token decode
-            string token  = Request.Headers["Authorization"];
+            string token = Request.Headers["Authorization"];
             //bearer kısmı olmadan decode etmek gerek
             var _token = token.Replace("Bearer ", "");
             var tokenStr = new JwtSecurityToken(jwtEncodedString: _token);
             //  unique_name kısmı id veriyor
             Console.WriteLine("id => " + tokenStr.Claims.First(c => c.Type == "unique_name").Value);
-            var name = tokenStr.Claims.First(c => c.Type == "unique_name").Value; 
+            var name = tokenStr.Claims.First(c => c.Type == "unique_name").Value;
             return Ok(name);
         }
-    }
 
+
+    }
 }

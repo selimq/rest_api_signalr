@@ -24,13 +24,13 @@ namespace LoginWebApi.Controllers
 
         [AllowAnonymous]
         [HttpPost("Authenticate")]
-        public async Task<IActionResult> Authenticate([FromBody] Person personParam)
+        public IActionResult Authenticate([FromBody] Person personParam)
         {
-            Person user =await login.Authenticate(personParam.Ad, personParam.Sifre);
+            String token = login.Authenticate(personParam.Mail);
 
-            if (user == null)
+            if (token == null)
                 return BadRequest();
-            return Ok(user);
+            return Ok(token);
         }
         [HttpGet]
         public  IActionResult GetLogins()
@@ -52,3 +52,4 @@ namespace LoginWebApi.Controllers
         }
     }
 }
+//lsof -i:50005

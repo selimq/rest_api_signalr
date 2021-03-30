@@ -115,12 +115,12 @@ namespace Login.Repo
         }
 
 
-        public async Task<Person> Authenticate(String ad, String sifre)
-        {
+        public  String Authenticate(String userPhone)
+        {/*
             Person user = await _db.Girisler.SingleOrDefaultAsync(x => x.Ad == ad && x.Sifre == sifre);
             if (user == null)
                 return null;
-
+            */
             // Authentication(Yetkilendirme) başarılı ise JWT token üretilir.
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes("12345678909876543211234567890");
@@ -128,17 +128,14 @@ namespace Login.Repo
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim(ClaimTypes.Name, userPhone)
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(2),
+                Expires = DateTime.UtcNow.AddYears(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            user.Token = tokenHandler.WriteToken(token);
+            return tokenHandler.WriteToken(token);
 
-            // Sifre null olarak gonderilir.
-            user.Sifre = null;
-            return user;
         }
 
 

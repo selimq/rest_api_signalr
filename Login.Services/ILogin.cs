@@ -11,7 +11,7 @@ namespace Login.Services
     public interface ILogin
     {
         Task<Person> GetLogin(int? id);
-        Task<Person> Authenticate(string ad, String soyad);
+        String Authenticate(String userPhone);
         IQueryable <Person> GetLogins { get; }
         Task<POJO> Save(Person giris);
         Task<POJO> Delete(int? Id);
