@@ -49,10 +49,6 @@
               "version": "[2.1.1, )",
               "autoReferenced": true
             },
-            "Microsoft.AspNetCore.Mvc.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",

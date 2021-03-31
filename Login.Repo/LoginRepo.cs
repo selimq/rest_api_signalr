@@ -68,13 +68,23 @@ namespace Login.Repo
         public async Task<POJO> Save(Person login)
         {
             POJO model = new POJO();
+
             //Add
             if (login.Id == 0)
             {
                 try
                 {
+
                     await _db.Girisler.AddAsync(login);
                     await _db.SaveChangesAsync();
+
+                    //eklemeden sonra bir de connection tablosuna ekleme yapıyoruz
+                    Connection con = new Connection();
+                    con.UserName = Convert.ToString(login.Id);
+                    con.Connected = '0';
+                    con.LastSeen = DateTime.Now;
+                    _db.Connection.Add(con);
+
 
                     model.Id = login.Id;
                     model.Flag = true;
@@ -115,7 +125,7 @@ namespace Login.Repo
         }
 
 
-        public  String Authenticate(String userPhone)
+        public String Authenticate(String userPhone)
         {/*
             Person user = await _db.Girisler.SingleOrDefaultAsync(x => x.Ad == ad && x.Sifre == sifre);
             if (user == null)
@@ -340,20 +350,22 @@ namespace Login.Repo
         public async Task<POJO> DeletePhoto(int? id)
         {
             POJO pojo = new POJO();
-            try{
+            try
+            {
                 Photo photo = await GetPhoto(id);
-            _db.Images.Remove(photo);
-            _db.SaveChanges();
-            pojo.Flag = true;
-            pojo.Message = "Başarıyla silindi.";
-            return pojo;
-            }
-            catch(Exception e) {
-                pojo.Flag = false;
-                pojo.Message="Hata" + e.Data ;
+                _db.Images.Remove(photo);
+                _db.SaveChanges();
+                pojo.Flag = true;
+                pojo.Message = "Başarıyla silindi.";
                 return pojo;
             }
-             }
+            catch (Exception e)
+            {
+                pojo.Flag = false;
+                pojo.Message = "Hata" + e.Data;
+                return pojo;
+            }
+        }
 
 
 
