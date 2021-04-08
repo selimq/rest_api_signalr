@@ -84,8 +84,29 @@ namespace Login.Repo
                     con.Connected = '0';
                     con.LastSeen = DateTime.Now;
                     _db.Connection.Add(con);
+                    //connection tablosu gibi bir de photo için ekleme yapılacak
+                    Photo pp = new Photo();
+                    pp.Id = login.Id;
+                    pp.Photo64 = " ";
+                    _db.Images.Add(pp);
+
+                    //token üretimi
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var key = Encoding.ASCII.GetBytes("12345678909876543211234567890");
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new Claim[]
+                        {
+                    new Claim(ClaimTypes.Name, login.Id.ToString())
+                        }),
+                        Expires = DateTime.UtcNow.AddYears(1),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    };
+                    var token = tokenHandler.CreateToken(tokenDescriptor);
+                    login.Token = tokenHandler.WriteToken(token);
 
 
+                    model.Token =login.Token;
                     model.Id = login.Id;
                     model.Flag = true;
                     model.Message = "Ekleme tamamlandı.";
@@ -125,7 +146,7 @@ namespace Login.Repo
         }
 
 
-        public String Authenticate(String userPhone)
+        public String Authenticate(String userID)
         {/*
             Person user = await _db.Girisler.SingleOrDefaultAsync(x => x.Ad == ad && x.Sifre == sifre);
             if (user == null)
@@ -138,7 +159,7 @@ namespace Login.Repo
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, userPhone)
+                    new Claim(ClaimTypes.Name, userID)
                 }),
                 Expires = DateTime.UtcNow.AddYears(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

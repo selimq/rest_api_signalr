@@ -10,5 +10,6 @@ namespace Login.Data
         public int NumberOfRows { get; set; }
         public bool Flag { get; set; }
         public String Message { get; set; }
+        public String Token{get;set;}
     }
 }

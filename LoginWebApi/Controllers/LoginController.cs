@@ -36,7 +36,7 @@ namespace LoginWebApi.Controllers
              return client;
          }*/
 
-        [Authorize]
+      //  [Authorize]
 
         [HttpPost]
         public async Task<IActionResult> Save([FromBody] Person login)
