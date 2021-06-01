@@ -50,6 +50,8 @@ namespace LoginWebApi.Hubs
             Connection User = await conn._GetConnection(chatMessage.ToUser);
 
             Person Sender = await login.GetLogin(int.Parse(chatMessage.Sender));
+           //!
+            Person Receiver = await login.GetLogin(int.Parse(chatMessage.ToUser));
 
 
 
@@ -65,29 +67,30 @@ namespace LoginWebApi.Hubs
                 String text = "";
                 foreach (CacheMessage _message in messages)
                 {
-                    text += _message.Message + _message.Time + "\n";
+                    text += _message.Message + "\n";
                 }
                 text += chatMessage.Message;
 
                 var body = new
                 {
-                    notification = new
+                    // to = "/topics/all",
+                    /*notification = new
                     {
                         body = text,
                         title = Sender.Ad,
                         tag = User.UserName
 
-                    },
-                    priority = "high",
-                    sound = "1",
+                    },*/
+                    to = Receiver.Sifre,
                     data = new
                     {
+                        id=chatMessage.Sender,
+                        sender =Sender.Ad,
+                        text = text,
                         clickaction = "FLUTTERNOTIFICATIONCLICK",
-                        id = "1",
-                        status = "done",
-
-                    },
-                    to = "/topics/all"
+                        //      id = "1",
+                        //   status = "done",
+                    }
                 };
 
                 ClientFireBase.DefaultRequestHeaders.Authorization =
@@ -149,8 +152,7 @@ namespace LoginWebApi.Hubs
                 await Clients.User(message.ToUser).SendCoreAsync("OnMessage", new object[] { json });
                 cache.Delete(message);
             }
-            //s   }
-
+        
 
         }
 

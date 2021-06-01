@@ -87,7 +87,6 @@ namespace Login.Repo
                     //connection tablosu gibi bir de photo için ekleme yapılacak
                     Photo pp = new Photo();
                     pp.Id = login.Id;
-                    pp.Photo64 = " ";
                     _db.Images.Add(pp);
 
                     //token üretimi
